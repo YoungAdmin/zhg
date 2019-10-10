@@ -1,0 +1,37 @@
+#####################      spring      #####################
+spring:
+  #JPA配置
+  jpa:
+    database: mysql
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: update
+
+  #数据库连接配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.107.105.158:3306/test?characterEncoding=utf-8&useSSL=false
+    username: root
+    password: MySQLpwd2019!
+
+#####################      server      #####################
+server:
+  port: 9091
+
+##################### spring-boot-plus #####################
+spring-boot-plus:
+  # 是否启用ansi控制台输出有颜色的字体，local环境建议开启，服务器环境设置为false
+  enable-ansi: true
+  # 请求日志在控制台是否格式化输出，local环境建议开启，服务器环境设置为false
+  request-log-format: true
+  # 响应日志在控制台是否格式化输出，local环境建议开启，服务器环境设置为false
+  response-log-format: true
+
+# logback.xml中有详细的日志配置
+logging:
+  #  方便Spring Boot Admin页面上实时查看日志
+  file: logs/spring-boot-plus.log
